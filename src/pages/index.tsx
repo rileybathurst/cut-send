@@ -27,13 +27,15 @@ function Plate() {
       <form name="size" method="POST" data-netlify="true">
 
         {/* // TODO react documentation on this */}
-        <input type="range" id="width" name="width" min="0" max="10" onChange={widthCm} />
-        <label>{width}</label>
+        <label>
+          <input type="range" id="width" name="width" min="0" max="10" onChange={widthCm} />
+          {width}</label>
 
         <hr />
 
-        <input type="range" id="length" name="width" min="0" max="10" onChange={lengthCm} />
-        <label>{length}</label>
+        <label>
+          <input type="range" id="length" name="width" min="0" max="10" onChange={lengthCm} />
+          {length}</label>
 
         <hr />
         <h3>Size</h3>
