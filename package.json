@@ -2,8 +2,15 @@
   "name": "cut-send",
   "version": "1.0.0",
   "private": true,
-  "description": "cut-send",
-  "author": "Riley",
+  "description": "cut send concept of an interactive website",
+  "author": {
+    "name": "Riley Bathurst",
+    "email": "riley@rileybathurst.com",
+    "url": "https://rileybathurst.com"
+  },
+  "homepage": "https://cut-send.netlify.app",
+  "repository": "github:rileybathurst/cut-send",
+  "license": "MIT",
   "keywords": [
     "gatsby"
   ],

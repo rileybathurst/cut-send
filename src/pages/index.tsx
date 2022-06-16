@@ -26,6 +26,9 @@ function Plate() {
     <>
       <form name="size" method="POST" data-netlify="true">
 
+        <input type="hidden" name="size"
+          value="New Size order from Cut &amp; Send" />
+
         {/* // TODO react documentation on this */}
         <label>
           <input type="range" id="width" name="width" min="0" max="10" onChange={widthCm} />
