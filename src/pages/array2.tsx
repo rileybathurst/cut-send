@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import Footer from '../src/components/footer';
+import Footer from '../components/footer';
 
 function Number() {
   const texts = ['one', 'two'];

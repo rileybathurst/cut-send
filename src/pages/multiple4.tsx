@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import Footer from '../src/components/footer';
+import Footer from '../components/footer';
 
 // https://thewebdev.info/2021/05/28/how-to-repeat-an-element-n-times-with-react/
 // I dont understand this
