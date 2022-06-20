@@ -7,7 +7,6 @@ function Plate() {
   const [length, setLength] = useState(5);
   const [radius, setRadius] = useState(0);
   const [size, setSize] = useState(0);
-  const [price, setPrice] = useState(10);
 
   function widthCm(e) {
     setWidth(e.target.value);
@@ -24,11 +23,26 @@ function Plate() {
     return null;
   }
 
+  function Price(props) {
+    // const [cost, setCost] = useState(5);
+    const [price, setPrice] = useState(25);
+
+    // setPrice(props.size * cost);
+
+    return <>
+      <p>
+        ${price}
+      </p>
+    </>
+  }
+
+
   // this always run last
   useEffect(() => {
+
     setSize(width * length); // + breaks this it might have to be flipped
-    setPrice(size * 10); // TODO this becomes a variable // this isnt happening last
-  }, [width, length, price]);
+  }, [width, length]);
+
 
   return (
     <main>
@@ -61,10 +75,6 @@ function Plate() {
         <h3>Size</h3>
         {size}&#13217;
         <hr />
-
-        ${price}
-
-        <hr />
         <button type="submit">Send</button>
 
       </form>
@@ -76,13 +86,14 @@ function Plate() {
           rx={radius}
         // ry='20' // I think Im gonna hold off on this for now
         />
+
       </svg>
       {/* <Price size={size} /> */}
     </main>
   )
 }
 
-const IndexPage = () => {
+const SinglePage = () => {
   return (
     <>
       <header>
@@ -94,4 +105,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default SinglePage

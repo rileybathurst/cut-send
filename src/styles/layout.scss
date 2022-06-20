@@ -1,0 +1,33 @@
+header {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+main {
+  display: flex;
+  max-width: var(--measure);
+  margin-inline: auto;
+  gap: 1rem;
+
+  > * {
+    flex: 1 1 20rem;
+  }
+
+  svg {
+    background-color: papayawhip; // TODO: use color-scheme
+  }
+}
+
+footer {
+  max-width: var(--measure);
+  margin-inline: auto;
+  margin-block-start: 3rem;
+  padding-block: 1.5rem;
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+    display: flex;
+    gap: 1rem;
+  }
+}

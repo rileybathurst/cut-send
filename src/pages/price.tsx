@@ -26,9 +26,10 @@ function Plate() {
 
   // this always run last
   useEffect(() => {
+
     setSize(width * length); // + breaks this it might have to be flipped
-    setPrice(size * 10); // TODO this becomes a variable // this isnt happening last
-  }, [width, length, price]);
+    setPrice(size * 10); // TODO this becomes a variable
+  }, [width, length]);
 
   return (
     <main>
@@ -76,13 +77,14 @@ function Plate() {
           rx={radius}
         // ry='20' // I think Im gonna hold off on this for now
         />
+
       </svg>
       {/* <Price size={size} /> */}
     </main>
   )
 }
 
-const IndexPage = () => {
+const PricePage = () => {
   return (
     <>
       <header>
@@ -94,4 +96,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default PricePage

@@ -1,0 +1,8 @@
+footer {
+  --c: lightgray;
+  background: var(--c);
+  /* a big box-shadow */
+  box-shadow: 0 0 0 100vmax var(--c);
+  /* clip only the top and bottom part of it */
+  clip-path: inset(0 -100vmax);
+}
