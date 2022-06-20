@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Footer from '../components/footer';
+import Footer from '../src/components/footer';
 
 function Plate() {
   const btn = document.querySelector('button');
