@@ -151,7 +151,7 @@ function Plate() {
   )
 }
 
-const IndexPage = () => {
+const TwoPage = () => {
   return (
     <>
       <header>
@@ -163,4 +163,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default TwoPage

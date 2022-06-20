@@ -7,6 +7,7 @@ const Footer = () => {
       <hr />
       <ul>
         <li key="home"><Link to="/">Home</Link></li>
+        <li key="two"><Link to="/two">Two</Link></li>
         <li key="single"><Link to="/single">Single</Link></li>
         <li key="multiple"><Link to="/multiple">Multiple</Link></li>
         <li key="multiple2"><Link to="/multiple2">Multiple2</Link></li>
@@ -17,6 +18,7 @@ const Footer = () => {
         <li key="price"><Link to="/price">Price</Link></li>
         <li key="array"><Link to="/array">Array</Link></li>
         <li key="array2"><Link to="/array2">Array2</Link></li>
+        <li key="start"><Link to="/start">Start</Link></li>
       </ul>
     </footer>
   )

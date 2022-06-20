@@ -4,18 +4,11 @@ import React from 'react';
 import Footer from '../components/footer';
 
 function Number() {
-  const texts = ['one', 'two'];
-
-  Array.from(Array(10).keys())
   console.log(Array);
-
-  let ten = Array.from(Array(10).keys())
-  console.log(ten);
-
   return (
     <>
       {
-        ten.map((i) => (
+        [...Array(2)].map((i) => (
           <div>{i}</div>
         ))
       }
@@ -23,7 +16,7 @@ function Number() {
   );
 }
 
-const Array2Page = () => {
+const Array3Page = () => {
   return (
     <>
       <header>
@@ -37,4 +30,4 @@ const Array2Page = () => {
   )
 }
 
-export default Array2Page
+export default Array3Page

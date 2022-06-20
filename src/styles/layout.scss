@@ -5,6 +5,7 @@ header {
 
 main {
   display: flex;
+  flex-direction: column;
   max-width: var(--measure);
   margin-inline: auto;
   gap: 1rem;

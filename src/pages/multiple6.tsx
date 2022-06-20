@@ -44,6 +44,7 @@ function Number(e) {
             name="number"
             min="0"
             max="2"
+            value={number}
             onChange={numberSet}
           />
           {number}

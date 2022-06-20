@@ -1,12 +1,12 @@
 svg {
   fill: blue; // TODO: use color-scheme
-  width: 20rem;
+  // width: 20rem;
 }
 
 svg rect:nth-child(even) {
   fill: red;
-  transform: translate(
+  /*   transform: translate(
     2px,
     2px
-  ); // I guess because this is 10px across viewport?
+  ); // I guess because this is 10px across viewport? */
 }
