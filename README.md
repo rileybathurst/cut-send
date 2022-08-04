@@ -12,3 +12,9 @@ this sort of starts to explaon the [...Array(n)].map(() => {})
 thingy.
 
 but the first atleast doesnt build but it develops.
+
+
+there was some NPM stuff that kinda looked promising but I never guite got there I need to document them.
+
+svg patterns these might be useable
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
