@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import Footer from '../components/footer';
+// thinking about what x means on the 
 
 function Shape(props) {
-  // console.log(props.i);
+  console.log(props.i); // itss an array so it starts at 0
   return (
     <rect
       width={props.width}
       height={props.height}
       rx={props.radius}
-      x={(props.width * props.i)}
-    // y={props.height * props.i}
+      x={(props.width * props.i) - props.width} // this needs more
+      y={(props.height * props.i)}
     />
   )
 }
@@ -24,21 +24,25 @@ function roughScale(x, base) {
 function Multiple(props) {
 
   let howMany = Array.from(Array(roughScale(props.number, 10)).keys())
-  // console.log(ten);
+  // console.log(howMany.length);
 
   return (
     <>
       {
         howMany.map((i) => (
           <>
-            <Shape
-              i={i}
-              number={props.number}
-              width={props.width}
-              height={props.height}
-              radius={props.radius}
+            <rect
+              width='1'
+              height='1'
+              x='1' // this needs more
+              y='1'
             />
-            {i}
+            <rect
+              width='2'
+              height='2'
+              x='2' // this needs more
+              y='2'
+            />
           </>
         ))
       }
@@ -53,13 +57,9 @@ function Plate() {
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(10);
   const [number, setNumber] = useState(1);
-  const [bigger, setBigger] = useState(5);
 
   function widthCm(e) {
     setWidth(e.target.value);
-    /*     window.onload = (event) => {
-          stay gold
-        } */
     return null;
   }
 
@@ -82,19 +82,6 @@ function Plate() {
   useEffect(() => {
     setSize(width * length); // + breaks this it might have to be flipped
     setPrice(size * 1.75); // TODO this becomes a variable // this isnt happening last
-
-    // console.log({'size = ${width}`});
-    console.log(`{width = ${width}}`);
-    console.log(`{length = ${length}}`);
-
-    if (length > width) {
-      setBigger(length / 2);
-    } else {
-      setBigger(width / 2);
-    }
-
-    console.log(`{bigger = ${bigger}}`);
-
   }, [width, length, price, size]);
 
   return (
@@ -121,8 +108,7 @@ function Plate() {
 
         <label>
           Radius:
-          {/* // TODO this should never be allowed over the width height so it can always be the right size as now it gets too small */}
-          <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
+          <input type="range" id="radius" name="radius" min="0" max="5" step="0.5" value={radius} onChange={radiusCm} />
           {radius}</label>
 
         <hr />
@@ -154,8 +140,6 @@ function Plate() {
       </form>
 
       <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-
-        {/* TODO: do things with classes and layering things with grids etc */}
         <defs>
           <pattern id="star" viewBox="0,0,10,10" width="10%" height="10%">
             <line x1="0" y1="0" x2="10" y2="0" stroke="black" />
@@ -168,30 +152,25 @@ function Plate() {
           height='10'
           x='0'
           y='0'
-          fill='url(#star)' // this gets overwritten by css
+          fill='url(#star)'
         />
 
-
-
-        <Multiple
-          width={width}
-          height={length}
-          radius={radius}
-          number={number}
+        <rect
+          width='1'
+          height='1'
+          x='0'
+          y='0'
+          fill='blue'
         />
-
-
-
-
-
-
       </svg>
+
+
       {/* <Price size={size} /> */}
-    </main>
+    </main >
   )
 }
 
-const IndexPage = () => {
+const XPage = () => {
   return (
     <>
       <header>
@@ -203,4 +182,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default XPage

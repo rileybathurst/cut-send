@@ -10,9 +10,18 @@ main {
   margin-inline: auto;
   gap: 1rem;
 
-  > * {
+  /*
+this breaks things as it adjusts the size of the svg box which is bad
+   > * {
     flex: 1 1 20rem;
-  }
+  } */
+
+  /*
+  this is kinda the default but does the thing
+  > * {
+    width: 100%;
+    height: 100%;
+  } */
 
   svg {
     background-color: papayawhip; // TODO: use color-scheme
