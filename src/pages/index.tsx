@@ -15,8 +15,6 @@ function Rect(props) {
     y = (props.height * which);
   }
 
-  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-
   return (
     <rect
       x={x}
@@ -24,7 +22,6 @@ function Rect(props) {
       rx={props.radius}
       width={props.width}
       height={props.height}
-      fill={`#${randomColor}`}
     />
   )
 }
@@ -44,6 +41,7 @@ const ThirdPage = () => {
   const [price, setPrice] = useState(10);
   const [number, setNumber] = useState(1);
   const [bigger, setBigger] = useState(5);
+  const [oversize, setOversize] = useState(false);
 
   let howMany = Array.from(Array(roughScale(number, 10)).keys());
 
@@ -77,6 +75,9 @@ const ThirdPage = () => {
       setBigger(width / 2);
     }
 
+    if (size > 10) {
+      setOversize(true);
+    }
   }, [width, height, price, size]);
 
   return (
@@ -139,7 +140,7 @@ const ThirdPage = () => {
 
         </form>
 
-        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" className='clrs'>
           {
             howMany.map((i) => (
               <Rect

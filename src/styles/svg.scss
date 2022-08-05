@@ -39,14 +39,49 @@ svg rect:nth-child(3n + 3) {
   fill: red;
 }
 
-.random-color rect {
-  fill: reset;
-}
+// https://clrs.cc/
+.clrs {
+  rect:first-child {
+    fill: #001f3f;
+  }
 
-.random-color rect:nth-child(odd) {
-  fill: reset;
-}
+  rect:nth-child(2) {
+    fill: #0074d9;
+  }
 
-.random-color rect:nth-child(3n + 3) {
-  fill: reset;
+  rect:nth-child(3) {
+    fill: #7fdbff;
+  }
+
+  rect:nth-child(4) {
+    fill: #39cccc;
+  }
+
+  rect:nth-child(5) {
+    fill: #3d9970;
+  }
+
+  rect:nth-child(6) {
+    fill: #2ecc40;
+  }
+
+  rect:nth-child(7) {
+    fill: #ffdc00;
+  }
+
+  rect:nth-child(8) {
+    fill: #ff851b;
+  }
+
+  rect:nth-child(9) {
+    fill: #ff4136;
+  }
+
+  rect:nth-child(10) {
+    fill: #b10dc9;
+  }
+
+  rect:nth-child(11) {
+    fill: #85144b;
+  }
 }
