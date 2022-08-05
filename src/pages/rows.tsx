@@ -11,9 +11,10 @@ function NeedsProps(props) {
   // let width = 5;
   // let width = 4;
   // let width = 3;
-  let width = 2
+  // let width = 2;
+  let width = 1;
 
-  let numberPerRow = 4; // ! change this for each
+  let numberPerRow = 10; // ! change this for each
 
   let x;
 
@@ -80,12 +81,27 @@ const RowsPage = () => {
           <NeedsProps i='1' row="0" />
           <NeedsProps i='2' row="0" />
           <NeedsProps i='3' row="0" />
-          <NeedsProps i='4' row="1" />
+          <NeedsProps i='4' row="0" />
           <NeedsProps i='5' row="1" />
           <NeedsProps i='6' row="1" />
           <NeedsProps i='7' row="1" />
-          <NeedsProps i='8' row="2" />
-          <NeedsProps i='9' row="2" />
+          <NeedsProps i='8' row="1" />
+          <NeedsProps i='9' row="1" />
+        </svg>
+
+        <hr />
+
+        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+          <NeedsProps i='0' row="0" />
+          <NeedsProps i='1' row="0" />
+          <NeedsProps i='2' row="0" />
+          <NeedsProps i='3' row="0" />
+          <NeedsProps i='4' row="0" />
+          <NeedsProps i='5' row="0" />
+          <NeedsProps i='6' row="0" />
+          <NeedsProps i='7' row="0" />
+          <NeedsProps i='8' row="0" />
+          <NeedsProps i='9' row="0" />
         </svg>
       </main>
 

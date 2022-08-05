@@ -21,4 +21,4 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
 
 ## current working
 
-Lines2Page
+rows.tsx now I just need to bring the variables back into this and I think I have something pretty good atleast to start.
