@@ -1,15 +1,15 @@
 // to use the patterns these have to be by classes
-svg {
+/* svg {
   fill: blue; // TODO: use color-scheme
 }
 
-svg rect:nth-child(even) {
+svg rect:nth-child(odd) {
   fill: red;
 }
 
-svg rect:nth-child(3) {
+svg rect:nth-child(3n + 3) {
   fill: green;
-}
+} */
 
 // i dont think flex as thats never really going to want to push rows?
 .svg-grid {
@@ -37,4 +37,16 @@ svg rect:nth-child(3) {
 
 .svg-flex svg:nth-child(even) {
   fill: red;
+}
+
+.random-color rect {
+  fill: reset;
+}
+
+.random-color rect:nth-child(odd) {
+  fill: reset;
+}
+
+.random-color rect:nth-child(3n + 3) {
+  fill: reset;
 }

@@ -22,3 +22,5 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern
 ## current working
 
 rows.tsx now I just need to bring the variables back into this and I think I have something pretty good atleast to start.
+
+combine rows with per2 as that does the math to figure out what row it should be on this is happening in second.tsx

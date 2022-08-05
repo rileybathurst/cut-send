@@ -8,13 +8,13 @@ function NeedsProps(props) {
   let height = 2;
 
   // * these all work
-  // let width = 5;
+  let width = 5;
   // let width = 4;
   // let width = 3;
   // let width = 2;
-  let width = 1;
 
-  let numberPerRow = 10; // ! change this for each
+
+  let numberPerRow = 2; // ! change this for each
 
   let x;
 

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
+// the problem is props.i
+
 function Rect(props) {
   let plate = 10 // this is the locked size of the outer plate
   let perRow = plate / props.width; // how many fit per row
+  // console.log('perRow', perRow); // 
   let floor = Math.floor(perRow); // round down to the nearest whole number
 
   let row = (props.i / floor); // the number divided by the number of boxes per row
@@ -108,6 +111,7 @@ const ThirdPage = () => {
 
           <label>
             Radius:
+            {/* // TODO this should never be allowed over the width height so it can always be the right size as now it gets too small */}
             <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
             {radius}</label>
 
