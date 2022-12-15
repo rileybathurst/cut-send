@@ -1,3 +1,7 @@
+body {
+  color: black; // TODO: use color-scheme
+}
+
 footer {
   --c: lightgray;
   background: var(--c);
@@ -5,4 +9,8 @@ footer {
   box-shadow: 0 0 0 100vmax var(--c);
   /* clip only the top and bottom part of it */
   clip-path: inset(0 -100vmax);
+}
+
+form {
+  accent-color: var(--priest_blue);
 }

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+import Header from '../components/header';
+
+// TODO: name
 function Rect(props) {
   let plate = 10 // this is the locked size of the outer plate
   let perRow = plate / props.width; // how many fit per row
@@ -82,77 +85,95 @@ const ThirdPage = () => {
 
   return (
     <>
-      <header>
-        <h1>Cut &amp; Send</h1>
-      </header>
+      <Header />
 
 
       <main>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo eros, semper eget semper non, viverra pulvinar magna. Ut tincidunt dui purus, in pulvinar arcu ullamcorper.</p>
+
         <form name="size" method="POST" data-netlify="true">
 
           <input type="hidden" name="size"
             value="New Size order from Cut &amp; Send" />
 
-          <label>
-            Width:
-            <input type="range" id="width" name="width" min="1" max="10" value={width} onChange={widthCm} />
-            {width}</label>
+          <div className='form_input'>
+            <label>
+              <span className='input__name'>Width: </span>
+              <input type="range" id="width" name="width" min="1" max="10" value={width} onChange={widthCm} />
+              <span className='input__state'>{width}</span>
+            </label>
+          </div>
+
+          <div className='form_input'>
+            {/* https://reactjs.org/docs/forms.html */}
+            <label>
+              <span className='input__name'>Height: </span>
+              <input type="range" id="height" name="height" min="1" max="10" value={height} onChange={heightCm} />
+              <span className='input__state'>{height}</span>
+            </label>
+          </div>
+
+          <div className='form_input'>
+
+            <label>
+              <span className='input__name'>Radius: </span>
+              <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
+              <span className='input__state'>{radius}</span>
+            </label>
+          </div>
+
+          <div className='form_input'>
+
+            <label>
+              <span className='input__name'>Number: </span>
+              <input
+                type="range"
+                id="number"
+                name="number"
+                min="1"
+                max="10"
+                value={number}
+                onChange={numberSet}
+              />
+              <span className='input__state'>{number}</span>
+            </label>
+
+          </div>
 
           <hr />
 
-          <label>
-            height:
-            <input type="range" id="height" name="height" min="1" max="10" value={height} onChange={heightCm} />
-            {height}</label>
-
+          <div className='form_static'>
+            <h3>Size</h3>
+            {size}&#13217;
+          </div>
           <hr />
 
-          <label>
-            Radius:
-            <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
-            {radius}</label>
-
-          <hr />
-
-          <label>
-            Number:
-            <input
-              type="range"
-              id="number"
-              name="number"
-              min="1"
-              max="10"
-              value={number}
-              onChange={numberSet}
-            />
-            {number}
-          </label>
-
-          <hr />
-          <h3>Size</h3>
-          {size}&#13217;
-          <hr />
-
-          ${price}
+          <div className='form_static'>
+            <h3>Price</h3>
+            ${price}
+          </div>
 
           <hr />
           <button type="submit">Send</button>
 
         </form>
 
-        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" className='clrs'>
-          {
-            howMany.map((i) => (
-              <Rect
-                i={i}
-                width={width}
-                height={height}
-                radius={radius}
-                number={number}
-              />
-            ))
-          }
-        </svg>
+        <div className='preview'>
+          <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" className='clrs'>
+            {
+              howMany.map((i) => (
+                <Rect
+                  i={i}
+                  width={width}
+                  height={height}
+                  radius={radius}
+                  number={number}
+                />
+              ))
+            }
+          </svg>
+        </div>
       </main>
     </>
   )
