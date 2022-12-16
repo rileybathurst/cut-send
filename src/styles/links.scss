@@ -1,0 +1,11 @@
+a {
+  color: var(--priest_blue);
+}
+
+a:hover {
+  color: hsl(var(--priest_blue__base), var(--dull));
+}
+
+a:active {
+  color: hsl(var(--priest_blue__base), var(--dark));
+}

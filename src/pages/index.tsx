@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from '../components/footer';
 
 import Header from '../components/header';
 
@@ -101,7 +102,7 @@ const ThirdPage = () => {
             <label>
               <span className='input__name'>Width: </span>
               <input type="range" id="width" name="width" min="1" max="10" value={width} onChange={widthCm} />
-              <span className='input__state'>{width}</span>
+              <span className='input__state'>{width}{/* // TODO: small space */}mm</span>
             </label>
           </div>
 
@@ -110,7 +111,7 @@ const ThirdPage = () => {
             <label>
               <span className='input__name'>Height: </span>
               <input type="range" id="height" name="height" min="1" max="10" value={height} onChange={heightCm} />
-              <span className='input__state'>{height}</span>
+              <span className='input__state'>{height}{/* // TODO: small space */}mm</span>
             </label>
           </div>
 
@@ -119,7 +120,7 @@ const ThirdPage = () => {
             <label>
               <span className='input__name'>Radius: </span>
               <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
-              <span className='input__state'>{radius}</span>
+              <span className='input__state'>{radius}{/* // TODO: small space */}mm</span>
             </label>
           </div>
 
@@ -144,37 +145,50 @@ const ThirdPage = () => {
           <hr />
 
           <div className='form_static'>
-            <h3>Size</h3>
+            <p>Size</p>
             {size}&#13217;
+            {/* // TODO: mm squared */}
           </div>
           <hr />
 
           <div className='form_static'>
-            <h3>Price</h3>
+            <p>Price</p>
             ${price}
+            {/* // TODO: NZ dollars somewhere on the page */}
           </div>
 
           <hr />
-          <button type="submit">Send</button>
+
+          <div className='preview'>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 10 10"
+            // className='clrs'
+            >
+              {
+                howMany.map((i) => (
+                  <Rect
+                    i={i}
+                    width={width}
+                    height={height}
+                    radius={radius}
+                    number={number}
+                  />
+                ))
+              }
+            </svg>
+            <button
+              type="submit"
+              className='button__primary'
+            >
+              Send
+            </button>
+          </div>
+
 
         </form>
-
-        <div className='preview'>
-          <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" className='clrs'>
-            {
-              howMany.map((i) => (
-                <Rect
-                  i={i}
-                  width={width}
-                  height={height}
-                  radius={radius}
-                  number={number}
-                />
-              ))
-            }
-          </svg>
-        </div>
       </main>
+      <Footer />
     </>
   )
 }

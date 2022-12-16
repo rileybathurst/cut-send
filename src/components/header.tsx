@@ -1,8 +1,17 @@
 import React from 'react';
 
+function Menu() {
+  return (
+    <nav>
+
+    </nav>
+  )
+}
+
 const Header = () => {
   return (
     <>
+      <Menu />
       <header>
         <div className='menu'>
           {/* // TODO */}
@@ -10,7 +19,14 @@ const Header = () => {
         </div>
         <hgroup>
           <h1>Cut &amp; Send</h1>
-          <h2>By Priest Sheetmetal</h2>
+          <h2>
+            <a
+              href="https://priestsheetmetal.co.nz"
+              target='_blank' rel='noopener noreferrer'
+            >
+              By Priest Sheetmetal
+            </a>
+          </h2>
         </hgroup>
         <div className='profile'>
           {/* // TODO */}

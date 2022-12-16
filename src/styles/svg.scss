@@ -1,24 +1,17 @@
-// to use the patterns these have to be by classes
-/* svg {
-  fill: blue; // TODO: use color-scheme
-}
+/*------------------*/
+//  #SVG
+/*------------------*/
 
-svg rect:nth-child(odd) {
-  fill: red;
-}
-
-svg rect:nth-child(3n + 3) {
-  fill: green;
-} */
-
-// i dont think flex as thats never really going to want to push rows?
-.svg-grid {
+// ? I'm never using this
+/* .svg-grid {
   display: grid;
   border: 1px solid black;
   max-width: 40rem;
   margin-inline: auto;
-}
+} */
 
+/* 
+? was this an early attempt
 .svg-flex svg:nth-child(even) {
   fill: red;
 }
@@ -37,9 +30,11 @@ svg rect:nth-child(3n + 3) {
 
 .svg-flex svg:nth-child(even) {
   fill: red;
-}
+} */
 
-// https://clrs.cc/
+/* 
+currently unused as it was a way to have each its seperate color
+https://clrs.cc/
 .clrs {
   rect:first-child {
     fill: #001f3f;
@@ -83,5 +78,13 @@ svg rect:nth-child(3n + 3) {
 
   rect:nth-child(11) {
     fill: #85144b;
+  }
+} */
+
+svg {
+  padding: 0.125rem;
+  rect {
+    fill: var(--priest_blue);
+    border: 1px solid white;
   }
 }

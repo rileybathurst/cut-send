@@ -2,6 +2,10 @@ body {
   line-height: 1.5;
 }
 
+h1 {
+  margin-block-start: 0; // reset
+}
+
 hr {
   border: 0;
   border-top: 1px solid var(--tin-soldier);
@@ -10,4 +14,8 @@ hr {
 
 header hgroup {
   text-align: center;
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }

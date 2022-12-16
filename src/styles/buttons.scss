@@ -1,3 +1,43 @@
 button {
-  border: 1px solid #000;
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+  border-radius: 0.125rem;
+  transition: 0.2s ease;
+  padding-block: 0.125rem;
+  padding-inline: 0.25rem;
+}
+
+button:hover {
+  background-color: var(--tin-soldier);
+  border-color: var(--blackout);
+  color: var(--black-out);
+  // TODO shadows all the way down
+}
+
+button:focus {
+  background-color: var(--priest_blue);
+  color: white;
+}
+
+.button__primary {
+  font-size: 2rem;
+  border-radius: 0.25rem;
+  background-color: var(--priest_blue);
+  color: var(--brilliance);
+  border-color: hsl(var(--priest_blue__base), var(--dull));
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem;
+  width: calc(100% - 1rem);
+  margin-inline: 0.5rem;
+}
+
+.button__primary:hover {
+  background-color: hsl(var(--priest_blue__base), var(--dull));
+  color: var(--kingly-cloud);
+}
+
+.button__primary:active {
+  // TODO: ? have I gone too dark to start
+  background-color: hsl(var(--priest_blue__base), var(--dark));
 }
