@@ -19,13 +19,13 @@ const LightingPage = () => {
           <input type="hidden" name="Lighting-name" value="contact" />
 
           <input type="hidden" name="subject"
-            value={`Contact Lighting from sierra.lighting ${email}`} />
+            value={`Contact Lighting from sierra.lighting`} />
 
           <label>Name
             <input type="text" name="name" />
           </label>
           <label>Email
-            <input type="email" name="email" onChange={subject} />
+            <input type="email" name="email" />
           </label>
           <label>Phone
             <input type="tel" name="tel" />
