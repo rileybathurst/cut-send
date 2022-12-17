@@ -93,7 +93,18 @@ const ThirdPage = () => {
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo eros, semper eget semper non, viverra pulvinar magna. Ut tincidunt dui purus, in pulvinar arcu ullamcorper.</p>
 
-        <form name="size" method="POST" data-netlify="true">
+        <form
+          name="size"
+          method="POST"
+          data-netlify="true"
+          action="/success"
+        >
+
+          <p className="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
 
           <input type="hidden" name="size"
             value="New Size order from Cut &amp; Send" />
