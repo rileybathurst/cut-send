@@ -7,7 +7,7 @@ const FormPage = () => {
       <title>Form</title>
       <h1>Form</h1>
       <p>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="form" method="POST" data-netlify="true">
           <p>
             <label>Your Name: <input type="text" name="name" /></label>
           </p>
