@@ -94,10 +94,11 @@ const ThirdPage = () => {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo eros, semper eget semper non, viverra pulvinar magna. Ut tincidunt dui purus, in pulvinar arcu ullamcorper.</p>
 
         <form
-          name="size"
+          name="send"
           method="POST"
           data-netlify="true"
           action="/success"
+          netlify-honeypot="bot-field"
         >
 
           <p className="hidden">
