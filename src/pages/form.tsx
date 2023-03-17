@@ -6,7 +6,7 @@ const FormPage = () => {
     <main>
       <title>Form</title>
       <h1>Form</h1>
-      <p>
+      {/* <p>
         <form
           name="form"
         // method="POST"
@@ -27,7 +27,7 @@ const FormPage = () => {
         </form>
 
         <Link to="/">Go home</Link>.
-      </p>
+      </p> */}
     </main>
   )
 }
