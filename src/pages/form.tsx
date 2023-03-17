@@ -10,7 +10,7 @@ const FormPage = () => {
       <form
         name="form"
         method="POST"
-      // data-netlify="true"
+        data-netlify="true"
       >
         <p>
           <label>Your Name: <input type="text" name="name" /></label>
