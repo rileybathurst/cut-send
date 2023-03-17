@@ -88,7 +88,6 @@ const ThirdPage = () => {
     <>
       <Header />
 
-
       <main>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo eros, semper eget semper non, viverra pulvinar magna. Ut tincidunt dui purus, in pulvinar arcu ullamcorper.</p>
@@ -180,6 +179,7 @@ const ThirdPage = () => {
               {
                 howMany.map((i) => (
                   <Rect
+                    key={i}
                     i={i}
                     width={width}
                     height={height}

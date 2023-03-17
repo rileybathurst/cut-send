@@ -1,0 +1,13 @@
+/*------------------*/
+//  #VISIBILITY
+/*------------------*/
+
+.sr-only {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hidden {
+  @extend .sr-only;
+}
