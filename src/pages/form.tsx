@@ -8,7 +8,7 @@ const FormPage = () => {
       <h1>Form</h1>
 
       <form
-      // name="form"
+        name="form"
       // method="POST"
       // data-netlify="true"
       >
