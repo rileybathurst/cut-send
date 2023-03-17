@@ -9,7 +9,7 @@ const FormPage = () => {
 
       <form
         name="form"
-      // method="POST"
+        method="POST"
       // data-netlify="true"
       >
         <p>
