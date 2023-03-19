@@ -21,7 +21,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "both": "gatsby build && jest"
+    "both": "jest && gatsby build"
   },
   "dependencies": {
     "gatsby": "5.7.0",
