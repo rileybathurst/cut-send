@@ -21,7 +21,7 @@ module.exports = {
         }
       }
     }, */
-    {
+    /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Cut Send`,
@@ -32,6 +32,6 @@ module.exports = {
         display: `standalone`,
         icon: "src/images/icon.png",
       },
-    },
+    }, */
   ]
 };

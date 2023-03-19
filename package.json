@@ -22,21 +22,14 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.0.1",
-    "canvg": "^4.0.1",
     "gatsby": "5.7.0",
-    "gatsby-plugin-csp": "^1.1.4",
-    "gatsby-plugin-manifest": "^5.7.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-sass": "^6.7.0",
-    "jspdf": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.59.3"
   },
   "devDependencies": {
-    "@parcel/core": "^2.8.3",
-    "@parcel/reporter-dev-server": "^2.8.3",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
