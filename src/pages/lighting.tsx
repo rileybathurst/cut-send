@@ -11,7 +11,7 @@ const LightingPage = () => {
         name="contact"
         data-netlify="true"
         method="POST"
-        action="/success"
+        action="/success/"
       >
         <label>Name
           <input type="text" name="name" />
