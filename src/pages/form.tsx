@@ -10,8 +10,8 @@ const FormPage = () => {
       <form
         name="form"
         method="POST"
-        // data-netlify="true"
-        netlify
+        data-netlify="true"
+      // netlify
       >
         <input type="text" name="name" />
         <button type="submit">Send</button>
