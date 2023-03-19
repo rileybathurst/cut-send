@@ -100,6 +100,8 @@ const ThirdPage = () => {
           netlify-honeypot="bot-field"
         >
 
+          {/* // * this cures a bug when combining react 18 and netlify form */}
+          {/* https://robertbattaglia.com/fixing-hydration-errors-from-netlify-forms/ */}
           <input type="hidden" name="form-name" value="send" />
 
           <p className="hidden">
