@@ -5,7 +5,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-netlify",
-    {
+    /* {
       resolve: `gatsby-plugin-csp`,
       options: {
         mergeSecurityHeaders: true, // ? testing june 18 2022 csp issue // boolean to turn off the default security headers
@@ -20,7 +20,7 @@ module.exports = {
           // you can add your directives or override defaults
         }
       }
-    },
+    }, */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
