@@ -3,6 +3,15 @@ import Footer from '../components/footer';
 
 import Header from '../components/header';
 
+import { StaticImage } from "gatsby-plugin-image"
+
+export function LaserCut() {
+  return <StaticImage
+    src="https://priest.s3.ap-southeast-2.amazonaws.com/cut-send/_DSC4909.jpg"
+    alt="Metal laser cutter with high-precision cutting head that can cut metal and non-metal materials"
+  />
+}
+
 // TODO: name
 function Rect(props) {
   let plate = 10 // this is the locked size of the outer plate
@@ -90,119 +99,132 @@ const ThirdPage = () => {
 
       <main>
 
-        <p>Priest Sheetmetal is a company that offers custom metal cutting and fabrication services. Customers can send in their designs for any metal project, such as signs, sculptures, furniture, or machinery parts. Priest Sheetmetal will use their advanced equipment and skilled staff to cut and prepare the metal according to the specifications. The company can work with various types of metal, such as steel, aluminum, copper, brass, or stainless steel. Customers can choose from different finishes and coatings to enhance the appearance and durability of their metal products. Priest Sheetmetal guarantees high-quality workmanship and fast turnaround times for all orders.</p>
+        <section className='progression'>
+          <article>
+            <h2>Precision Cutting</h2>
+            <p>Priest Sheetmetal is a company that offers custom metal cutting and fabrication services. Customers can send in their designs for any metal project, such as signs, sculptures, furniture, or machinery parts. Priest Sheetmetal will use their advanced equipment and skilled staff to cut and prepare the metal according to the specifications. The company can work with various types of metal, such as steel, aluminum, copper, brass, or stainless steel. Customers can choose from different finishes and coatings to enhance the appearance and durability of their metal products. Priest Sheetmetal guarantees high-quality workmanship and fast turnaround times for all orders.</p>
+          </article>
 
-        <form
-          name="send"
-          method="POST"
-          data-netlify="true"
-          action="/success"
-          netlify-honeypot="bot-field"
-        >
+          <LaserCut />
 
-          {/* // * this cures a bug when combining react 18 and netlify form */}
-          {/* https://robertbattaglia.com/fixing-hydration-errors-from-netlify-forms/ */}
-          <input type="hidden" name="form-name" value="send" />
+        </section>
 
-          <p className="hidden">
-            <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-          </p>
+        <section className='passage width-100'>
+          <h2>Design Your Cut</h2>
+          <form
+            name="send"
+            method="POST"
+            data-netlify="true"
+            action="/success"
+            netlify-honeypot="bot-field"
 
-          <input type="hidden" name="size"
-            value="New Size order from Cut &amp; Send" />
+          >
 
-          <div className='form_input'>
-            <label>
-              <span className='input__name'>Width: </span>
-              <input type="range" id="width" name="width" min="1" max="10" value={width} onChange={widthCm} />
-              <span className='input__state'>{width}{/* // TODO: small space */}mm</span>
-            </label>
-          </div>
+            {/* // * this cures a bug when combining react 18 and netlify form */}
+            {/* https://robertbattaglia.com/fixing-hydration-errors-from-netlify-forms/ */}
+            <input type="hidden" name="form-name" value="send" />
 
-          <div className='form_input'>
-            {/* https://reactjs.org/docs/forms.html */}
-            <label>
-              <span className='input__name'>Height: </span>
-              <input type="range" id="height" name="height" min="1" max="10" value={height} onChange={heightCm} />
-              <span className='input__state'>{height}{/* // TODO: small space */}mm</span>
-            </label>
-          </div>
+            <p className="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
 
-          <div className='form_input'>
+            <input type="hidden" name="size"
+              value="New Size order from Cut &amp; Send" />
 
-            <label>
-              <span className='input__name'>Radius: </span>
-              <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
-              <span className='input__state'>{radius}{/* // TODO: small space */}mm</span>
-            </label>
-          </div>
+            <div className='form_input'>
+              <label>
+                <span className='input__name'>Width: </span>
+                <input type="range" id="width" name="width" min="1" max="10" value={width} onChange={widthCm} />
+                <span className='input__state'>{width}{/* // TODO: small space */}mm</span>
+              </label>
+            </div>
 
-          <div className='form_input'>
+            <div className='form_input'>
+              {/* https://reactjs.org/docs/forms.html */}
+              <label>
+                <span className='input__name'>Height: </span>
+                <input type="range" id="height" name="height" min="1" max="10" value={height} onChange={heightCm} />
+                <span className='input__state'>{height}{/* // TODO: small space */}mm</span>
+              </label>
+            </div>
 
-            <label>
-              <span className='input__name'>Number: </span>
-              <input
-                type="range"
-                id="number"
-                name="number"
-                min="1"
-                max="10"
-                value={number}
-                onChange={numberSet}
-              />
-              <span className='input__state'>{number}</span>
-            </label>
+            <div className='form_input'>
 
-          </div>
+              <label>
+                <span className='input__name'>Radius: </span>
+                <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
+                <span className='input__state'>{radius}{/* // TODO: small space */}mm</span>
+              </label>
+            </div>
 
-          <hr />
+            <div className='form_input'>
 
-          <div className='form_static'>
-            <p>Size</p>
-            {size}&#13217;
-            {/* // TODO: mm squared */}
-          </div>
-          <hr />
+              <label>
+                <span className='input__name'>Number: </span>
+                <input
+                  type="range"
+                  id="number"
+                  name="number"
+                  min="1"
+                  max="10"
+                  value={number}
+                  onChange={numberSet}
+                />
+                <span className='input__state'>{number}</span>
+              </label>
 
-          <div className='form_static'>
-            <p>Price</p>
-            ${price}
-            {/* // TODO: NZ dollars somewhere on the page */}
-          </div>
-
-          <hr />
-
-          <div className='preview'>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 10 10"
-            // className='clrs'
-            >
-              {
-                howMany.map((i) => (
-                  <Rect
-                    key={i}
-                    i={i}
-                    width={width}
-                    height={height}
-                    radius={radius}
-                    number={number}
-                  />
-                ))
-              }
-            </svg>
-            <button
-              type="submit"
-              className='button__primary'
-            >
-              Send
-            </button>
-          </div>
+            </div>
 
 
-        </form>
+            <hr />
+
+            <div className='form_static'>
+              <p>Size</p>
+              {size}&#13217;
+              {/* // TODO: mm squared */}
+            </div>
+            <hr />
+
+            <div className='form_static'>
+              <p>Price</p>
+              ${price}
+              {/* // TODO: NZ dollars somewhere on the page */}
+            </div>
+
+            <hr />
+
+            <div className='preview'>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 10 10"
+              // className='clrs'
+              >
+                {
+                  howMany.map((i) => (
+                    <Rect
+                      key={i}
+                      i={i}
+                      width={width}
+                      height={height}
+                      radius={radius}
+                      number={number}
+                    />
+                  ))
+                }
+              </svg>
+              <button
+                type="submit"
+                className='button__primary'
+              >
+                Send
+              </button>
+            </div>
+
+
+          </form>
+        </section>
 
 
 

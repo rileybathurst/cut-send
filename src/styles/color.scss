@@ -1,17 +1,28 @@
 body {
-  color: black; // TODO: use color-scheme
+  color: var(--black-metal);
 }
 
 header {
+  // color the top bar lighter as its closer
+
   a {
     color: var(--priest_blue);
   }
 }
 
 footer {
-  background: var(--brilliance);
-  box-shadow: 0 0 0 100vmax var(--brilliance);
+  margin-block-start: calc(var(--baseline) * 2);
+  background: var(--kingly-cloud); // this would be prettier slightly blue
+  box-shadow: 0 0 0 100vmax var(--kingly-cloud);
   clip-path: inset(0 -100vmax);
+
+  background: hsl(195, var(--dull), var(--bright));
+  box-shadow: 0 0 0 100vmax hsl(195, var(--dull), var(--bright));
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--priest_blue);
+  }
 }
 
 form {

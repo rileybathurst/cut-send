@@ -1,5 +1,21 @@
+/*------------------*/
+//  #TYPOGRAPHY
+/*------------------*/
+
 body {
   line-height: 1.5;
+  font-family: "roboto", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "roboto-slab", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 h1 {

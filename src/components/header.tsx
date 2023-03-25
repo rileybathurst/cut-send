@@ -15,10 +15,10 @@ const Header = () => {
     <>
       <Menu />
       <header>
-        <div className='menu'>
-          {/* // TODO */}
+        {/* <div className='menu'>
+          // TODO
           <button>MENU</button>
-        </div>
+        </div> */}
         <hgroup>
           <h1 className='sr-only'>Cut &amp; Send</h1>
           <CSTallIcon />
@@ -31,10 +31,10 @@ const Header = () => {
             </a>
           </h2>
         </hgroup>
-        <div className='profile'>
-          {/* // TODO */}
+        {/* <div className='profile'>
+          // TODO
           <button>SIGN IN</button>
-        </div>
+        </div> */}
       </header>
 
       <hr />
