@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PriestIcon from '../images/priest';
 
 const Footer = () => {
   return (
     <footer>
       <hr />
       <div className='footer__crown'>
-        <p>Cut &amp; Send by Priest Sheetmetal</p>
+        <PriestIcon />
         <p>&copy; {/* // TODO: date */}</p>
       </div>
       <ul>

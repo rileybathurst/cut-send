@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CSTallIcon from '../images/cs-tall';
+
 function Menu() {
   return (
     <nav>
@@ -18,8 +20,9 @@ const Header = () => {
           <button>MENU</button>
         </div>
         <hgroup>
-          <h1>Cut &amp; Send</h1>
-          <h2>
+          <h1 className='sr-only'>Cut &amp; Send</h1>
+          <CSTallIcon />
+          <h2 className='sr-only'>
             <a
               href="https://priestsheetmetal.co.nz"
               target='_blank' rel='noopener noreferrer'
