@@ -11,3 +11,49 @@
 .hidden {
   @extend .sr-only;
 }
+
+.above-stork {
+  @media (min-width: $stork) {
+    display: none;
+  }
+}
+
+.below-stork {
+  @media (max-width: $stork) {
+    display: inital;
+  }
+}
+
+/*------------------*/
+//  #HEADER
+/*------------------*/
+
+.before-scroll {
+}
+
+.after-scroll {
+}
+
+.cs-tall-icon {
+}
+
+.cs-wide-icon {
+  position: sticky; // starts as this
+  position: fixed; // becomes this on scroll
+  top: 1px;
+
+  // is this an intersection observer?
+  // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+}
+
+header.in-view {
+  .cs-wide-icon {
+    display: none;
+  }
+}
+
+header.out-view {
+  .cs-tall-icon {
+    display: none;
+  }
+}

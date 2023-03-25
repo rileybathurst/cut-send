@@ -39,7 +39,8 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: process.env.TYPEKIT_ID,
+          id: process.env.GATSBY_ADOBE_FONT_PROJECT_ID,
+          // families: ["Roboto", "Roboto-Slab"],
         },
       },
     },

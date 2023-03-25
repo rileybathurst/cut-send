@@ -4,7 +4,7 @@
 
 body {
   line-height: 1.5;
-  font-family: "roboto", serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "roboto-slab", serif;
+  font-family: "Roboto Slab", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -33,5 +33,17 @@ header hgroup {
 
   h3 {
     font-size: 1.5rem;
+  }
+}
+
+/*------------------*/
+// #EYEBROW
+/*------------------*/
+
+hgroup {
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tin-soldier);
   }
 }

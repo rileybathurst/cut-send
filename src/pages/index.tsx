@@ -101,7 +101,10 @@ const ThirdPage = () => {
 
         <section className='progression'>
           <article>
-            <h2>Precision Cutting</h2>
+            <hgroup>
+              <h3 className='eyebrow'>The Service</h3>
+              <h2 className='supra'>Precision Cutting</h2>
+            </hgroup>
             <p>Priest Sheetmetal is a company that offers custom metal cutting and fabrication services. Customers can send in their designs for any metal project, such as signs, sculptures, furniture, or machinery parts. Priest Sheetmetal will use their advanced equipment and skilled staff to cut and prepare the metal according to the specifications. The company can work with various types of metal, such as steel, aluminum, copper, brass, or stainless steel. Customers can choose from different finishes and coatings to enhance the appearance and durability of their metal products. Priest Sheetmetal guarantees high-quality workmanship and fast turnaround times for all orders.</p>
           </article>
 
@@ -110,7 +113,11 @@ const ThirdPage = () => {
         </section>
 
         <section className='passage width-100'>
-          <h2>Design Your Cut</h2>
+
+          <hgroup>
+            <h3 className='eyebrow'>The Form</h3>
+            <h2>Design Your Cut</h2>
+          </hgroup>
           <form
             name="send"
             method="POST"
@@ -196,6 +203,10 @@ const ThirdPage = () => {
             <hr />
 
             <div className='preview'>
+              <hgroup>
+                <h3 className='eyebrow'>Preview</h3>
+                <h2 className='supra'>Review The Result</h2>
+              </hgroup>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 10 10"
@@ -214,6 +225,12 @@ const ThirdPage = () => {
                   ))
                 }
               </svg>
+
+              <hgroup>
+                <h3 className='eyebrow'>Send</h3>
+                <h2 className='supra'>Ready To Go?</h2>
+              </hgroup>
+
               <button
                 type="submit"
                 className='button__primary'

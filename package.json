@@ -24,6 +24,8 @@
     "both": "jest && gatsby build"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/roboto-slab": "^4.5.11",
     "gatsby": "5.7.0",
     "gatsby-plugin-csp": "^1.1.4",
     "gatsby-plugin-image": "^3.8.0",
