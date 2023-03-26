@@ -37,13 +37,19 @@
 .cs-tall-icon {
 }
 
-.cs-wide-icon {
-  position: sticky; // starts as this
-  position: fixed; // becomes this on scroll
-  top: 1px;
-
-  // is this an intersection observer?
-  // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+@media (min-width: $stork) {
+  .cs-wide-icon {
+    position: fixed; // becomes this on scroll
+    top: 1px;
+    background: white; // this would be prettier slightly blue
+    box-shadow: 0 0 0 100vmax white;
+    clip-path: inset(0 -100vmax);
+    opacity: 0.9;
+    margin-block-start: 0;
+    padding-block: 0.5rem;
+    z-index: 3;
+    // filter: blur(4px); // I want this to blur underneath not the logo
+  }
 }
 
 header.in-view {

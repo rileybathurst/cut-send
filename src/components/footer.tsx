@@ -8,11 +8,12 @@ const Footer = () => {
       <hr />
       <div className='footer__crown'>
         <PriestIcon />
-        <p>&copy; {/* // TODO: date */}</p>
+        <p>&copy; {new Date().getFullYear()}</p>
+
       </div>
-      <ul>
+      {/* <ul>
         <li key="about"><Link to="/about">About</Link></li>
-      </ul>
+      </ul> */}
     </footer>
   )
 }

@@ -29,24 +29,118 @@ function Rect(props) {
     y = (props.height * which);
   }
 
+
+  console.log(`x = ${x}`);
+  console.log(`y = ${y}`);
+  console.log(`width = ${props.width}`);
+
+  // start with the default rect
+  if (props.sides === 4 || props.sides === "4") {
+    return (
+      <rect
+        x={x}
+        y={y}
+        rx={props.radius}
+        width={props.width}
+        height={props.height}
+      />
+    )
+  } else if (props.sides === "3") {
+
+    let triWidth = props.width / 2;
+    let TriStart = x;
+    let TriMid = x + triWidth;
+    // stupid JS
+    let TriEnd = +x + +props.width;
+
+    // let TriTop = y;
+    let TriTop = 0;
+    if (y === undefined) {
+      let TriTop = 0;
+      console.log('🦄');
+      console.log('triTop = 0');
+    } else {
+      let TriTop = y;
+      console.log('🦖');
+    }
+
+    // let TriBottom = y + props.height;
+    let TriBottom = props.height;
+    if (y === undefined) {
+      let TriBottom = props.height;
+    } else {
+      let TriBottom = y + props.height;
+    }
+
+    console.log(`TriTop = ${TriTop}`);
+    console.log(`TriBottom = ${TriBottom}`);
+
+    return (
+      <>
+        <rect
+          x={x}
+          y={y}
+          rx={props.radius}
+          width={props.width}
+          height={props.height}
+        />
+        {/* // TODO: this does the first one but without the x and y
+        // I need to move them more manually */}
+
+        {/* // * First Triangle */}
+        {/*         <polygon
+          points={`
+            0,${props.height}
+            ${triWidth},0
+            ${props.width},${props.height}
+          `}
+          fill="orange"
+        /> */}
+
+        {/* // * Triangle */}
+        <polygon
+          points={`
+            ${TriStart},${TriBottom}
+            ${TriMid},${TriTop}
+            ${TriEnd},${TriBottom}
+          `}
+          fill="orange"
+        />
+      </>
+    )
+  } else {
+    return (
+      <rect
+        x={x}
+        y={y}
+        rx={props.radius}
+        width={props.width}
+        height={props.height}
+      />
+    );
+  }
+}
+
+function Polygon(props) {
+
   return (
-    <rect
-      x={x}
-      y={y}
-      rx={props.radius}
-      width={props.width}
-      height={props.height}
+    <polygon
+      points="0,10 5,2.5 5,7.5 10,0"
+      fill="orange"
     />
   )
 }
 
+
+// ? what did I do here can I document it
+// write documentation for function roughScale
 function roughScale(x, base) {
   const parsed = parseInt(x, base);
   if (isNaN(parsed)) { return 0; }
   return parsed;
 }
 
-const ThirdPage = () => {
+const PolygonPage = () => {
 
   const [width, setWidth] = useState(5);
   const [height, setHeight] = useState(2);
@@ -56,7 +150,9 @@ const ThirdPage = () => {
   const [number, setNumber] = useState(1);
   const [bigger, setBigger] = useState(5);
   const [oversize, setOversize] = useState(false);
+  const [sides, setSides] = useState(4);
 
+  // TODO: this is how to do the lines mapping
   let howMany = Array.from(Array(roughScale(number, 10)).keys());
 
   function widthCm(e) {
@@ -76,6 +172,11 @@ const ThirdPage = () => {
 
   function numberSet(e) {
     setNumber(e.target.value);
+    return null;
+  }
+
+  function sideNum(e) {
+    setSides(e.target.value);
     return null;
   }
 
@@ -122,11 +223,11 @@ const ThirdPage = () => {
             <h2>Design Your Cut</h2>
           </hgroup>
           <form
-            name="send"
-            method="POST"
-            data-netlify="true"
-            action="/success"
-            netlify-honeypot="bot-field"
+          // name="send"
+          // method="POST"
+          // data-netlify="true"
+          // action="/success"
+          // netlify-honeypot="bot-field"
 
           >
 
@@ -161,11 +262,19 @@ const ThirdPage = () => {
             </div>
 
             <div className='form_input'>
-
               <label>
                 <span className='input__name'>Radius: </span>
                 <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
                 <span className='input__state'>{radius}{/* // TODO: small space */}mm</span>
+              </label>
+            </div>
+
+            {/* // TODO: Sides */}
+            <div className='form_input'>
+              <label>
+                <span className='input__name'>Sides: </span>
+                <input type="range" id="sides" name="sides" min="1" max="10" value={sides} onChange={sideNum} />
+                <span className='input__state'>{sides}</span>
               </label>
             </div>
 
@@ -217,22 +326,28 @@ const ThirdPage = () => {
               >
                 {
                   howMany.map((i) => (
-                    <Rect
-                      key={i}
-                      i={i}
-                      width={width}
-                      height={height}
-                      radius={radius}
-                      number={number}
-                    />
+                    <>
+                      <Rect
+                        key={i}
+                        i={i}
+                        width={width}
+                        height={height}
+                        radius={radius}
+                        number={number}
+                        sides={sides}
+                      />
+                      {/*                       <Polygon
+                        key={i}
+                        i={i}
+                        width={width}
+                        height={height}
+                        number={number}
+                      /> */}
+                    </>
                   ))
                 }
 
-
-
                 <Lines />
-
-
               </svg>
 
               <hgroup>
@@ -261,4 +376,4 @@ const ThirdPage = () => {
   )
 }
 
-export default ThirdPage
+export default PolygonPage

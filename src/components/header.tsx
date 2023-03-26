@@ -6,6 +6,9 @@ import CSWideIcon from '../images/cs-wide';
 function LogoChanger() {
   const ref = useRef();
 
+  // TODO give this an animation in and out.
+  // test the sonos scroll up animation first
+
   useEffect(() => {
 
     // check what im dealing with
