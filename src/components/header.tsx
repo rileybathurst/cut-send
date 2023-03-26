@@ -12,7 +12,7 @@ function LogoChanger() {
   useEffect(() => {
 
     // check what im dealing with
-    console.log(ref.current);
+    // console.log(ref.current);
 
     createObserver();
 

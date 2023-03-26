@@ -13,42 +13,31 @@ export function LaserCut() {
   />
 }
 
-function TriTop(props: number | undefined) {
-
-  console.log('👻');
-  // console.log(props.y);
-
-  // flip this so its a ternary
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
-  if (props.y) {
-    let TriTopper = props.y;
-    console.log(TriTopper);
+// I dont know if this is a function maybe its a component
+function TriTop(z: number) {
+  if (z === 0) {
+    let TriTopper = 0;
     return TriTopper;
   } else {
-    console.log('📣');
-    let TriTopper = 0;
-    console.log(TriTopper);
+    let TriTopper = z;
     return TriTopper;
   }
 }
 
-// ! close this i keep working on it by mistake
-function TriBottom(props: { y: any; height?: any; }) {
+function TriBottom(z, height) {
 
-  // console.log(props.y);
-  // console.log();
+  console.log(z);
+  console.log(z.z);
+  console.log(height);
+  console.log(z.height);
+  // console.log(z?.z);
+  // console.log(z?.height);
 
-  if (props.y) {
-    let TriBottomer = props.y + props.height;
-    console.log(TriBottomer);
-    return TriBottomer;
-  } else {
-    let TriBottomer = 2;
-    console.log(TriBottomer);
-    return TriBottomer;
-  }
 
-  return null;
+
+  let TriBottomer = +z.z + +z.height;
+  return TriBottomer;
+
 }
 
 
@@ -63,7 +52,11 @@ function Rect(props: { width: string | number | undefined; i: number; height: st
 
   let x = props.width * props.i - props.width * which * floor;
 
-  let y;
+  // console.log(`which = ${which}`)
+
+  // ! this might be the problem
+  // let y;
+  let y = 0;
   if (which > 0) {
     y = (props.height * which);
   }
@@ -100,12 +93,21 @@ function Rect(props: { width: string | number | undefined; i: number; height: st
           height = props.height
         ) */
 
-    console.log('🍟')
-    console.log(TriTop(1));
+    // console.log('🍟')
+    console.log(y);
+    // console.log(TriTop(y = 1));
     console.log(TriTop(y));
-    // console.log(TriTop(y?.y));
 
-    // console.log(TriBottom(y.y));
+    let Tippy = TriTop(y);
+
+
+    let BottomPass = {
+      z: y,
+      height: props.height
+    }
+
+    let Toppy = TriBottom(BottomPass);
+    console.log(Toppy); // returns an object?
 
     return (
       <>
@@ -119,9 +121,9 @@ function Rect(props: { width: string | number | undefined; i: number; height: st
         {/* // * Triangle */}
         <polygon
           points={`
-            ${TriStart}, 1
-            ${TriMid}, 0
-            ${TriEnd}, 1
+            ${TriStart}, ${Toppy}
+            ${TriMid}, ${Tippy}
+            ${TriEnd}, ${Toppy}
           `}
           fill="orange"
         />
@@ -171,8 +173,7 @@ const PolygonPage = () => {
   const [number, setNumber] = useState(2); // ! testing
   const [bigger, setBigger] = useState(5);
   const [oversize, setOversize] = useState(false);
-  // const [sides, setSides] = useState(4); // ! testing
-  const [sides, setSides] = useState(3); // ! testing
+  const [sides, setSides] = useState(4);
 
   // TODO: this is how to do the lines mapping
   let howMany = Array.from(Array(roughScale(number, 10)).keys());
@@ -283,15 +284,14 @@ const PolygonPage = () => {
               </label>
             </div>
 
-            <div className='form_input'>
+            {/*             <div className='form_input'>
               <label>
                 <span className='input__name'>Radius: </span>
                 <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
-                <span className='input__state'>{radius}{/* // TODO: small space */}mm</span>
-              </label>
-            </div>
+                <span className='input__state'>{radius} // TODO: small space mm</span>
+        </label>
+      </div> */}
 
-            {/* // TODO: Sides */}
             <div className='form_input'>
               <label>
                 <span className='input__name'>Sides: </span>
@@ -321,20 +321,20 @@ const PolygonPage = () => {
 
             <hr />
 
-            <div className='form_static'>
+            {/* <div className='form_static'>
               <p>Size</p>
               {size}&#13217;
-              {/* // TODO: mm squared */}
+               // TODO: mm squared 
             </div>
             <hr />
 
             <div className='form_static'>
               <p>Price</p>
               ${price}
-              {/* // TODO: NZ dollars somewhere on the page */}
+               // TODO: NZ dollars somewhere on the page 
             </div>
-
             <hr />
+ */}
 
             <div className='preview'>
               <hgroup>
@@ -387,12 +387,12 @@ const PolygonPage = () => {
 
 
           </form>
-        </section>
+        </section >
 
 
 
 
-      </main>
+      </main >
       <Footer />
     </>
   )
