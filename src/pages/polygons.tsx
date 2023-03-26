@@ -13,8 +13,47 @@ export function LaserCut() {
   />
 }
 
+function TriTop(props: number | undefined) {
+
+  console.log('👻');
+  // console.log(props.y);
+
+  // flip this so its a ternary
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+  if (props.y) {
+    let TriTopper = props.y;
+    console.log(TriTopper);
+    return TriTopper;
+  } else {
+    console.log('📣');
+    let TriTopper = 0;
+    console.log(TriTopper);
+    return TriTopper;
+  }
+}
+
+// ! close this i keep working on it by mistake
+function TriBottom(props: { y: any; height?: any; }) {
+
+  // console.log(props.y);
+  // console.log();
+
+  if (props.y) {
+    let TriBottomer = props.y + props.height;
+    console.log(TriBottomer);
+    return TriBottomer;
+  } else {
+    let TriBottomer = 2;
+    console.log(TriBottomer);
+    return TriBottomer;
+  }
+
+  return null;
+}
+
+
 // TODO: name
-function Rect(props) {
+function Rect(props: { width: string | number | undefined; i: number; height: string | number | undefined; sides: string | number; radius: string | number | undefined; }) {
   let plate = 10 // this is the locked size of the outer plate
   let perRow = plate / props.width; // how many fit per row
   let floor = Math.floor(perRow); // round down to the nearest whole number
@@ -29,10 +68,9 @@ function Rect(props) {
     y = (props.height * which);
   }
 
-
-  console.log(`x = ${x}`);
-  console.log(`y = ${y}`);
-  console.log(`width = ${props.width}`);
+  // console.log(`x = ${x}`);
+  // console.log(`y = ${y}`);
+  // console.log(`width = ${props.width}`);
 
   // start with the default rect
   if (props.sides === 4 || props.sides === "4") {
@@ -53,27 +91,21 @@ function Rect(props) {
     // stupid JS
     let TriEnd = +x + +props.width;
 
-    // let TriTop = y;
-    let TriTop = 0;
-    if (y === undefined) {
-      let TriTop = 0;
-      console.log('🦄');
-      console.log('triTop = 0');
-    } else {
-      let TriTop = y;
-      console.log('🦖');
-    }
+    // For some reason the Y wont work the same way as the X
+    // So I'm trying to write it as function
+    // ! was it just the extra +'s ?
+    // TriTop(y = { y })
+    /*     TriBottom(
+          y = { y }
+          height = props.height
+        ) */
 
-    // let TriBottom = y + props.height;
-    let TriBottom = props.height;
-    if (y === undefined) {
-      let TriBottom = props.height;
-    } else {
-      let TriBottom = y + props.height;
-    }
+    console.log('🍟')
+    console.log(TriTop(1));
+    console.log(TriTop(y));
+    // console.log(TriTop(y?.y));
 
-    console.log(`TriTop = ${TriTop}`);
-    console.log(`TriBottom = ${TriBottom}`);
+    // console.log(TriBottom(y.y));
 
     return (
       <>
@@ -84,25 +116,12 @@ function Rect(props) {
           width={props.width}
           height={props.height}
         />
-        {/* // TODO: this does the first one but without the x and y
-        // I need to move them more manually */}
-
-        {/* // * First Triangle */}
-        {/*         <polygon
-          points={`
-            0,${props.height}
-            ${triWidth},0
-            ${props.width},${props.height}
-          `}
-          fill="orange"
-        /> */}
-
         {/* // * Triangle */}
         <polygon
           points={`
-            ${TriStart},${TriBottom}
-            ${TriMid},${TriTop}
-            ${TriEnd},${TriBottom}
+            ${TriStart}, 1
+            ${TriMid}, 0
+            ${TriEnd}, 1
           `}
           fill="orange"
         />
@@ -121,7 +140,7 @@ function Rect(props) {
   }
 }
 
-function Polygon(props) {
+function Polygon(props: any) {
 
   return (
     <polygon
@@ -134,7 +153,7 @@ function Polygon(props) {
 
 // ? what did I do here can I document it
 // write documentation for function roughScale
-function roughScale(x, base) {
+function roughScale(x: string | number, base: number | undefined) {
   const parsed = parseInt(x, base);
   if (isNaN(parsed)) { return 0; }
   return parsed;
@@ -142,40 +161,43 @@ function roughScale(x, base) {
 
 const PolygonPage = () => {
 
-  const [width, setWidth] = useState(5);
+  // const [width, setWidth] = useState(5); // ! testing
+  const [width, setWidth] = useState(6); // ! testing
   const [height, setHeight] = useState(2);
   const [radius, setRadius] = useState(1);
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(10);
-  const [number, setNumber] = useState(1);
+  // const [number, setNumber] = useState(1); // ! testing
+  const [number, setNumber] = useState(2); // ! testing
   const [bigger, setBigger] = useState(5);
   const [oversize, setOversize] = useState(false);
-  const [sides, setSides] = useState(4);
+  // const [sides, setSides] = useState(4); // ! testing
+  const [sides, setSides] = useState(3); // ! testing
 
   // TODO: this is how to do the lines mapping
   let howMany = Array.from(Array(roughScale(number, 10)).keys());
 
-  function widthCm(e) {
+  function widthCm(e: { target: { value: React.SetStateAction<number>; }; }) {
     setWidth(e.target.value);
     return null;
   }
 
-  function heightCm(e) {
+  function heightCm(e: { target: { value: React.SetStateAction<number>; }; }) {
     setHeight(e.target.value);
     return null;
   }
 
-  function radiusCm(e) {
+  function radiusCm(e: { target: { value: React.SetStateAction<number>; }; }) {
     setRadius(e.target.value);
     return null;
   }
 
-  function numberSet(e) {
+  function numberSet(e: { target: { value: React.SetStateAction<number>; }; }) {
     setNumber(e.target.value);
     return null;
   }
 
-  function sideNum(e) {
+  function sideNum(e: { target: { value: React.SetStateAction<number>; }; }) {
     setSides(e.target.value);
     return null;
   }
