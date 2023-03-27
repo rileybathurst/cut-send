@@ -11,7 +11,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line
@@ -64,7 +64,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-        stroke-dashoffset="0.04"
+        strokeDashoffset="0.04"
       />
 
       <line
@@ -127,7 +127,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line
@@ -144,7 +144,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line
@@ -161,7 +161,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line
@@ -178,7 +178,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line
@@ -195,7 +195,7 @@ const Lines = () => {
         stroke="lightgray"
         strokeWidth="0.05"
         strokeDasharray="0.4"
-      // stroke-dashoffset="3"
+      // strokeDashoffset="3"
       />
 
       <line

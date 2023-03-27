@@ -133,6 +133,7 @@ const PolygonPage = () => {
   const [width, setWidth] = useState(6); // ! testing
   const [height, setHeight] = useState(2);
   const [radius, setRadius] = useState(1);
+  const [radiusAble, setRadiusAble] = useState(true);
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(10);
   // const [number, setNumber] = useState(1); // ! testing
@@ -154,7 +155,7 @@ const PolygonPage = () => {
     return null;
   }
 
-  function radiusCm(e: { target: { value: React.SetStateAction<number>; }; }) {
+  function radiusCm(e: { target: { value: number; }; }) {
     setRadius(e.target.value);
     return null;
   }
@@ -164,8 +165,40 @@ const PolygonPage = () => {
     return null;
   }
 
-  function sideNum(e: { target: { value: React.SetStateAction<number>; }; }) {
-    setSides(e.target.value);
+  // sides also have some repuccions
+  function sideNum(e: { target: { value: number; }; }) {
+    // setSides(e.target.value);
+    // console.log(e.target.value);
+    // console.log(sides);
+
+    let integer = Number(e.target.value);
+    // console.log(integer);
+
+    // * only rectangles and circles can have radius
+    if (integer === 4 || integer === 1) {
+      setRadiusAble(true);
+      setSides(integer);
+
+      // * starting at a circle and going to a triangle
+      // ! theres a bug in this where it bounces and does both
+    } else if (integer === 2 && sides === 1) {
+      // if you try make a 2 sided object from a circle itll give you a triangle
+      // console.log(e.target._wrapperState.initialValue);
+      // console.log('🦄');
+      setRadiusAble(false);
+      setSides(3);
+
+      // * starting at a triangle and going to a circle
+    } else if (integer === 2 && sides >= 3) {
+      // console.log('🦖');
+      setSides(1);
+      setRadiusAble(false);
+
+      // * default
+    } else {
+      setRadiusAble(false);
+      setSides(integer);
+    }
     return null;
   }
 
@@ -217,7 +250,6 @@ const PolygonPage = () => {
           // data-netlify="true"
           // action="/success"
           // netlify-honeypot="bot-field"
-
           >
 
             {/* // * this cures a bug when combining react 18 and netlify form */}
@@ -252,6 +284,15 @@ const PolygonPage = () => {
 
             <div className='form_input'>
               <label>
+                <span className='input__name'>Sides: </span>
+                <input type="range" id="sides" name="sides" min="1" max="10" value={sides} onChange={sideNum} />
+                <span className='input__state'>{sides}</span>
+              </label>
+            </div>
+
+            {/* // this can come and go so it needs to be below the sides */}
+            <div className={`form_input radius_input ${radiusAble}`}>
+              <label>
                 <span className='input__name'>Radius: </span>
                 <input type="range" id="radius" name="radius" min="0" max={bigger} step="0.5" value={radius} onChange={radiusCm} />
                 <span className='input__state'>{radius} mm
@@ -260,15 +301,6 @@ const PolygonPage = () => {
             </div>
 
             <div className='form_input'>
-              <label>
-                <span className='input__name'>Sides: </span>
-                <input type="range" id="sides" name="sides" min="1" max="10" value={sides} onChange={sideNum} />
-                <span className='input__state'>{sides}</span>
-              </label>
-            </div>
-
-            <div className='form_input'>
-
               <label>
                 <span className='input__name'>Number: </span>
                 <input
