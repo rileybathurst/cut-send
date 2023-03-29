@@ -11,8 +11,6 @@ class PDFBuild extends React.Component {
     // defaults // orientation: 'p', // unit: 'mm', // format: 'a4', // putOnlyUsedFonts:true
     const doc = new jsPDF();
 
-    doc.setLineWidth(0.01);
-
     let name = 'test';
     doc.text(name, 50, 10); // these are mm so not similar to sierra plans
 
@@ -64,12 +62,10 @@ const PDFPage = () => {
       />
 
       <PDFBuild
-        // currently not sending any data up but just for the first test
-
         // try send less arguments and grab them above as we need everything
         // plan={props.plan}
 
-        // but this is different as its being adapted
+        // image prop
         data={dataState}
       />
       <h1>Triangle</h1>
@@ -79,10 +75,6 @@ const PDFPage = () => {
         alt="the svg but its an image"
         className="data"
       />
-
-      {/*       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-        <polygon points="0,10 5,2.5 5,7.5 10,0" />
-      </svg> */}
     </main>
   )
 }
