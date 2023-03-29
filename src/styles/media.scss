@@ -5,3 +5,23 @@
 .gatsby-image-wrapper {
   box-shadow: var(--troposphere);
 }
+
+canvas {
+  aspect-ratio: 1;
+  max-width: 10rem;
+  background-color: slateblue;
+  margin: 1rem;
+}
+
+img.data {
+  aspect-ratio: 1;
+  max-width: 10rem;
+  margin: 1rem;
+  border: 1px solid orchid;
+}
+
+.pdf {
+  canvas {
+    display: none;
+  }
+}
